@@ -14,20 +14,17 @@ export default class HighlightCode extends Component {
   });
   }
   componentDidMount() {
-    console.log(this.refs.el)
     const oldHTML = this.refs.el.innerHTML
     let newHTML = this.convertUnicode(oldHTML) 
     this.refs.el.innerHTML = newHTML
-    console.log(this.refs.el)
+    highlight(this.refs.el)
   }
 
   componentDidUpdate() {
-    //highlight(this.refs.el)
-    console.log(this.refs.el)
     const oldHTML = this.refs.el.innerHTML
     let newHTML = this.convertUnicode(oldHTML) 
     this.refs.el.innerHTML = newHTML
-    console.log(this.refs.el)
+    highlight(this.refs.el)
   }
 
   render () {
