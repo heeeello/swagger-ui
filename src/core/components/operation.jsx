@@ -123,6 +123,7 @@ export default class Operation extends React.Component {
 
     let summary = operation.get("summary")
     let description = operation.get("description")
+    let progress = operation.get("x-progress")
     let deprecated = operation.get("deprecated")
     let externalDocs = operation.get("externalDocs")
     let responses = operation.get("responses")
@@ -157,12 +158,12 @@ export default class Operation extends React.Component {
           <div className={`opblock-summary opblock-summary-${method}`} onClick={this.toggleShown} >
             <span className="opblock-summary-method">{method.toUpperCase()}</span>
             <span className={ deprecated ? "opblock-summary-path__deprecated" : "opblock-summary-path" } >
-              <span>{path}</span>
+              <span>{path} </span> 
               <JumpToPath path={jumpToKey} />
             </span>
 
             { !showSummary ? null :
-                <div className="opblock-summary-description">
+                <div className="opblock-summary-description" style={{textAlign: "right"}}>
                   { summary }
                 </div>
             }
